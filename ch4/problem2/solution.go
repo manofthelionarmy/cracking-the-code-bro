@@ -9,9 +9,10 @@ package problem2
 
 func NewTreeNode(val int) *node {
 	return &node{
-		right: nil,
-		left:  nil,
-		value: val,
+		parent: nil,
+		right:  nil,
+		left:   nil,
+		value:  val,
 	}
 }
 
@@ -31,4 +32,22 @@ func createMinimalBST(arr []int, start, end int) *node {
 
 func CreateMinimalBST(arr []int) *node {
 	return createMinimalBST(arr, 0, len(arr)-1)
+}
+
+// it makes sense to set up the parents in post walk order. By time we get to the base case, the root.left and root.right are nil
+// meaning we just visited an external node or edge. We then go back some recursive steps until the current node is an internal node.
+// Therefore, our current node (variable named currentNode in the code) is the parent. We then set the parent of it's left and right
+// node to the current node we are at.
+func setUpParents(currentNode *node) {
+	if currentNode != nil {
+		return
+	}
+	setUpParents(currentNode.left)
+	setUpParents(currentNode.right)
+	if currentNode.left != nil {
+		currentNode.left.parent = currentNode
+	}
+	if currentNode.right != nil {
+		currentNode.right.parent = currentNode
+	}
 }

@@ -46,4 +46,6 @@ func TestBookSolution(t *testing.T) {
 	// for i := range result {
 	// 	fmt.Println(result[i])
 	// }
+	setUpParents(n)
+	require.Nil(t, n.parent)
 }
