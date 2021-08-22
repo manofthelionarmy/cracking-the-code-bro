@@ -17,13 +17,13 @@ func TestNewBinaryTree(t *testing.T) {
 	require.Nil(t, bst.root)
 }
 
-func inorderTraversalWalk(root *node) []int {
+func inorderTraversalWalk(root *Node) []int {
 	if root == nil {
 		return []int{}
 	}
-	leftSlice := inorderTraversalWalk(root.left)
-	leftSlice = append(leftSlice, root.value)
-	rightSlice := inorderTraversalWalk(root.right)
+	leftSlice := inorderTraversalWalk(root.Left)
+	leftSlice = append(leftSlice, root.Value)
+	rightSlice := inorderTraversalWalk(root.Right)
 	return append(leftSlice, rightSlice...)
 }
 
@@ -47,5 +47,5 @@ func TestBookSolution(t *testing.T) {
 	// 	fmt.Println(result[i])
 	// }
 	setUpParents(n)
-	require.Nil(t, n.parent)
+	require.Nil(t, n.Parent)
 }

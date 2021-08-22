@@ -1,45 +1,45 @@
 package problem2
 
-type node struct {
-	value  int
-	parent *node
-	left   *node
-	right  *node
+type Node struct {
+	Value  int
+	Parent *Node
+	Left   *Node
+	Right  *Node
 }
 
 type BSTree struct {
-	root *node
+	root *Node
 }
 
 func NewBSTree() *BSTree {
 	return &BSTree{root: nil}
 }
 
-func (bst *BSTree) Root() *node {
+func (bst *BSTree) Root() *Node {
 	return bst.root
 }
 
 func (bst *BSTree) Insert(val int) {
 	temPtr := bst.root
-	var trailingPtr *node
+	var trailingPtr *Node
 	for temPtr != nil {
 		trailingPtr = temPtr
-		if val <= temPtr.value {
-			temPtr = temPtr.left
+		if val <= temPtr.Value {
+			temPtr = temPtr.Left
 		} else {
-			temPtr = temPtr.right
+			temPtr = temPtr.Right
 		}
 	}
 
-	newEl := &node{value: val, parent: trailingPtr, left: nil, right: nil}
+	newEl := &Node{Value: val, Parent: trailingPtr, Left: nil, Right: nil}
 	if trailingPtr == nil {
 		bst.root = newEl
 		return
 	}
-	if val <= trailingPtr.value {
-		trailingPtr.left = newEl
+	if val <= trailingPtr.Value {
+		trailingPtr.Left = newEl
 	} else {
-		trailingPtr.right = newEl
+		trailingPtr.Right = newEl
 	}
 
 }
