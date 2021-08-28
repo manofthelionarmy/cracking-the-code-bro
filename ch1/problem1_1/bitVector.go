@@ -19,11 +19,10 @@ func BitVectorHasUniqueCharacters(input string) bool {
 	for _, r := range input {
 		flippedBit := uint64(1)
 		flippedBit = flippedBit << getShift(r) // TODO: need a way to get the bit at the bit position in the bit vector
-		// TODO: need a way to get the bit at the bit position in the bit vector
-		invertBitVector := ^bitVector
-		checkFlipped := invertBitVector ^ flippedBit              // flip the bit for inverted
-		checkFlipped = (bitVector | flippedBit) ^ (^checkFlipped) // Read as: append the bit to the bit vector, then xor against the reinverted bits
-		if checkFlipped != flippedBit {
+		bitMask := bitVector ^ flippedBit      // flip the bit for inverted
+		// flip the bit for inverted
+		bitMask = (bitVector | flippedBit) ^ (bitMask) // Read as: append the bit to the bit vector, then xor against the reinverted bits
+		if bitMask != flippedBit {
 			bitVector = bitVector | flippedBit
 		} else {
 			return false
