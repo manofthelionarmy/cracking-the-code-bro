@@ -4,12 +4,13 @@ import (
 	"github.com/manofthelionarmy/goLearnAlgos/graphs"
 )
 
-func IsThereARoute(sourceVertex *graphs.Vertex, endVertex *graphs.Vertex) bool {
+func IsThereARoute(g graphs.Graph, source *graphs.Vertex, endVertex *graphs.Vertex) bool {
+	graphs.BreadthFirstSearch(g, source)
 
 	trailingVertex := endVertex
 
 	for trailingVertex != nil {
-		if sourceVertex == trailingVertex {
+		if source == trailingVertex {
 			return true
 		}
 		trailingVertex = trailingVertex.Parent
