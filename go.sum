@@ -6,6 +6,8 @@ github.com/manofthelionarmy/goLearnAlgos v1.1.4 h1:/joqawLfWmnagC+7meHMUsVNMcdcP
 github.com/manofthelionarmy/goLearnAlgos v1.1.4/go.mod h1:Z6H7RI/GUMtETJZyV+ZVpB7fOueohYeedx1H6S3kxl4=
 github.com/manofthelionarmy/goLearnAlgos v1.2.0 h1:K+ZMjEoZUWVGQZ5UMZzOgTPgopdWjNAgiWXy8a+oaH0=
 github.com/manofthelionarmy/goLearnAlgos v1.2.0/go.mod h1:Z6H7RI/GUMtETJZyV+ZVpB7fOueohYeedx1H6S3kxl4=
+github.com/manofthelionarmy/goLearnAlgos v1.2.1-0.20210829235737-dde85688eaef h1:7jRdrxH5St+m18x6NrBlIkFtgEcOeqKpUObJys9L4JU=
+github.com/manofthelionarmy/goLearnAlgos v1.2.1-0.20210829235737-dde85688eaef/go.mod h1:Z6H7RI/GUMtETJZyV+ZVpB7fOueohYeedx1H6S3kxl4=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=

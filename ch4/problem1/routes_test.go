@@ -8,7 +8,7 @@ import (
 )
 
 func TestRoute(t *testing.T) {
-	g := graphs.NewGraph()
+	g := graphs.NewUndirectedGraph()
 	g.AddEdge(1, 5)
 	g.AddEdge(5, 2)
 	g.AddEdge(2, 6)
